@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main-check {
+            background-color: rgb(36, 225, 36);
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row; /* Alinha os elementos em coluna */
+        }
+        
+        .checkbox-label {
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            background-color: grey;
+            height: auto;
+            margin: 5px 0; /* Adiciona margem entre os labels */
+            color: white; /* Altera a cor do texto para branco */
+        }
+    </style>
+</head>
+<body>
+    <div id="main-check">
+        <div id="controlForm">
+            <label class="checkbox-label">Check1
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check2
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar  
+            </label>
+            <label class="checkbox-label">Check3
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check4
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check5
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check6
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox"name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check7
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox" name="minhaCheckbox">Selecionar 
+            </label>
+            <label class="checkbox-label">Check8
+                <input type="text" placeholder="RS 4,00">
+                <input type="checkbox" name="minhaCheckbox">Selecionar 
+            </label>
+        </div>
+    </div>
+</body>
+<script> 
+//     const checkboxLabels = document.querySelectorAll('.checkbox-label');
+
+// checkboxLabels.forEach(label => {
+//   const checkbox = label.querySelector('input[type="checkbox"]');
+//   const inputText = label.querySelector('input[type="text"]');
+
+//   checkbox.addEventListener('change', () => {
+//     if (checkbox.checked) {
+//       inputText.value = 'RS 0.00';
+//     } else {
+//       inputText.value = inputText.placeholder; // Revert to original placeholder
+//     }
+//   });
+// });
+function zerar() {
+    var labelElements = document.querySelectorAll('.checkbox-label')
+    
+    labelElements.forEach(label => {
+        var checkBox = label.querySelector('input[type="checkbox"]')
+        var modifiedText = label.querySelector('input[type="text"]')
+
+        if(checkBox.checked){
+            modifiedText.value = "ZERANDO NO CLICK!"
+        }
+        else{
+            modifiedText.value = modifiedText.placeholder
+        }
+    })
+
+}
+
+document.addEventListener('change', zerar)
+
+</script>
+</html>
