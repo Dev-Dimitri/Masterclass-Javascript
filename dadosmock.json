@@ -1,0 +1,10 @@
+{
+    "companies": [
+      { "id": 1, "name": "Tesla", "permiteCadastroClientes": true },
+      { "id": 2, "name": "Toyota", "permiteCadastroClientes": false },
+      { "id": 3, "name": "Mitsubishi", "permiteCadastroClientes": false },
+      { "id": 4, "name": "Volkswagen", "permiteCadastroClientes": false },
+      { "id": 5, "name": "Nissan", "permiteCadastroClientes": true },
+      { "id": 6, "name": "Bmw", "permiteCadastroClientes": true }
+    ]
+  }

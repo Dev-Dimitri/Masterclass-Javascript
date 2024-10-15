@@ -12,7 +12,7 @@ valorCep = () => {
 
 consultarCep = () => {
     try {
-        let cep = document.getElementById("valor-cep").value;
+        let cep = document.getElementById("id").value;
 
         if (cep == null || cep.lenght <= 8){
             throw("Forneça um cep válido!")

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cadastro de Profissional</h1>
+    <form id="formCadastro">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="text" id="sobrenome" placeholder="Sobrenome" required>
+        <input type="number" id="idade" placeholder="Idade" required min="0">
+        <input type="text" id="profissao" placeholder="Profissão" required>
+        <select id="nivel" required>
+            <option value="">Selecione o Nível</option>
+            <option value="junior">Desenvolvedor Junior</option>
+            <option value="pleno">Desenvolvedor Pleno</option>
+            <option value="senior">Desenvolvedor Senior</option>
+        </select>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        document.getElementById("formCadastro").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            
+            // Captura os valores dos campos
+            const nome = document.getElementById("nome").value;
+            const sobrenome = document.getElementById("sobrenome").value;
+            const idade = document.getElementById("idade").value;
+            const profissao = document.getElementById("profissao").value;
+            const nivel = document.getElementById("nivel").value;
+
+            // Exibe os dados capturados
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = `
+                <h2>Dados Salvos:</h2>
+                <p>Nome: ${nome}</p>
+                <p>Sobrenome: ${sobrenome}</p>
+                <p>Idade: ${idade}</p>
+                <p>Profissão: ${profissao}</p>
+                <p>Nível: ${nivel}</p>
+            `;
+        
+            getAllValues(nome, sobrenome, idade, profissao, nivel);
+    });
+
+    const getAllValues = (nome, sobrenome, idade, profissao, nivel) => {
+        const info = [];
+        info.push(nome, sobrenome, idade, profissao, nivel);
+        console.log(info);
+    }
+    </script>
+
+</body>
+</html>

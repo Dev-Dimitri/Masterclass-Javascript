@@ -25,7 +25,6 @@ async function buscarCep(url:string){
     return data;
 }
 
-
 buscaCep(url)
 .then(data => {
     console.log(data.cep)
